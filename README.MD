@@ -18,7 +18,8 @@ independent tidy data set with the average of each variable for each activity an
 # Code & descriptions:
 Merges the training and the test sets to create one data set.
 
-x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder /n
+x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder
+
 x_test <- read.table("data/X_test.txt") # read X_test.txt from project data folder
 
 y_train <- read.table("data/y_train.txt") # read y_train.txt from project data folder
@@ -36,7 +37,7 @@ test <- data.frame(x_test,y_test,subject_test) # merge test data set
 entire_data <- rbind(train, test)    ## merge datasets to entire_data set
 
 
-2. Extracts only the measurements on the mean and standard deviation for each measurement.
+Extracts only the measurements on the mean and standard deviation for each measurement.
 
 feature <- read.table("data/features.txt") # read features.txt from project data folder
 
@@ -51,8 +52,8 @@ feature <- feature[order(feature$V1),] # sort feature table
 measures <-entire_data[,c(feature$V1,562,563)] # Extract Mean and STD variables on entire_data set
 
 
-3. Uses descriptive activity names to name the activities in the data set
-4. Appropriately labels the data set with descriptive activity names.
+Uses descriptive activity names to name the activities in the data set
+Appropriately labels the data set with descriptive activity names.
 
 measures$V1.1[measures$V1.1 == "1"] <- "walking" # label activities
 
@@ -73,7 +74,7 @@ names(measures)[67] <- "activity" # label activity variable
 names(measures)[68] <- "subject" # label subject variable
 
 
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 measures$subject <- as.character(measures$subject) #character subject vairable
 
@@ -82,7 +83,7 @@ measures1 <- measures[,1:66] # subset data
 cleandata <- aggregate(measures1, by=list(measures$activity,measures$subject), mean) # aggregate data and get mean by group activity & subject
 
 
-6. Save cleandata
+Save cleandata
 
 write.table(cleandata, file="clean_data.txt",row.names=FALSE)
 
