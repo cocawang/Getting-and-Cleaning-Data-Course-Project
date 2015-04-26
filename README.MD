@@ -17,9 +17,9 @@ independent tidy data set with the average of each variable for each activity an
 
 # Code & descriptions:
 Merges the training and the test sets to create one data set.
-x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder
-x_test <- read.table("data/X_test.txt") # read X_test.txt from project data folder
-y_train <- read.table("data/y_train.txt") # read y_train.txt from project data folder
+x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder.
+x_test <- read.table("data/X_test.txt") # read X_test.txt from project data folder.
+y_train <- read.table("data/y_train.txt") # read y_train.txt from project data folder.
 y_test <- read.table("data/y_test.txt") # read y_test.txt from project data folder
 subject_train <- read.table("data/subject_train.txt") # read subject_train.txt from project data folder
 subject_test <- read.table("data/subject_test.txt") # read subject_test.txt from project data folder
