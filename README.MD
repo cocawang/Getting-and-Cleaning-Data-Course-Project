@@ -16,9 +16,9 @@ independent tidy data set with the average of each variable for each activity an
 5.	Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 # Code & descriptions:
-1. Merges the training and the test sets to create one data set.
+Merges the training and the test sets to create one data set.
 
-x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder
+x_train <- read.table("data/X_train.txt") # read X_train.txt from project data folder /n
 x_test <- read.table("data/X_test.txt") # read X_test.txt from project data folder
 
 y_train <- read.table("data/y_train.txt") # read y_train.txt from project data folder
