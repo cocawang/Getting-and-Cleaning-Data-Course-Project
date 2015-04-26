@@ -1,14 +1,14 @@
-x_train <- read.table("d:/Project/X_train.txt")
-x_test <- read.table("d:/Project/X_test.txt")
-y_train <- read.table("d:/Project/y_train.txt")
-y_test <- read.table("d:/Project/y_test.txt")
-subject_train <- read.table("d:/Project/subject_train.txt")
-subject_test <- read.table("d:/Project/subject_test.txt")
+x_train <- read.table("data/X_train.txt")
+x_test <- read.table("data/X_test.txt")
+y_train <- read.table("data/y_train.txt")
+y_test <- read.table("data/y_test.txt")
+subject_train <- read.table("data/subject_train.txt")
+subject_test <- read.table("data/subject_test.txt")
 train <- data.frame(x_train,y_train,subject_train)
 test <- data.frame(x_test,y_test,subject_test)
 entire_data <- rbind(train, test)    ##merge datasets
 
-feature <- read.table("d:/Project/features.txt")
+feature <- read.table("data/features.txt")
 feature1 <- feature[grep("std()", feature$V2), ]
 feature2 <- feature[grep("mean()", feature$V2,fixed=TRUE), ]
 feature <- rbind(feature1,feature2)
